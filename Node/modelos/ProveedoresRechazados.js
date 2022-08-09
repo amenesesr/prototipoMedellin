@@ -1,5 +1,4 @@
 import db from '../database/db.js'
-
 import {DataTypes} from 'sequelize'
 
 const ProveedoresRechazadosModelo = db.define('db_proveedores_rechazados',{
@@ -11,4 +10,3 @@ const ProveedoresRechazadosModelo = db.define('db_proveedores_rechazados',{
 })
 
 export default ProveedoresRechazadosModelo
-

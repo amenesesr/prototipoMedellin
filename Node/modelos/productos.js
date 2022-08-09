@@ -1,5 +1,4 @@
 import db from '../database/db.js'
-
 import {DataTypes} from 'sequelize'
 
 const ProductosModelo = db.define('db_productos',{

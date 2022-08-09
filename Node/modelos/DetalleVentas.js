@@ -1,5 +1,4 @@
 import db from '../database/db.js'
-
 import {DataTypes} from 'sequelize'
 
 const DetalleVentasModelo = db.define('db_detalle_ventas',{
@@ -14,4 +13,3 @@ const DetalleVentasModelo = db.define('db_detalle_ventas',{
 })
 
 export default DetalleVentasModelo
-

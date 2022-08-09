@@ -11,4 +11,3 @@ const ProveedoresModelo = db.define('db_proveedores',{
 })
 
 export default ProveedoresModelo
-
