@@ -21,7 +21,7 @@ export const mostraru = async (req, res) =>{
 
     try {
         const product = await UsuariosModelo.findAll({
-            where:{ codigo_productos: req.params.codigo_productos }
+            where:{ cedula_usuarios: req.params.cedula_usuarios }
         })
         res.json(product[0])
     } catch (error) {
@@ -53,7 +53,7 @@ export const modificar = async (req, res) => {
 
     try {
         await UsuariosModelo.update(req.body, {
-            where: { codigo_productos: req.params.codigo_productos}
+            where: { cedula_usuarios: req.params.cedula_usuarios}
         })
         res.json({
             "message":"¡Registro actualizado correctamente!"
@@ -71,7 +71,7 @@ export const eliminar = async (req, res) => {
 
     try {
         await UsuariosModelo.destroy({ 
-            where: { codigo_productos : req.params.codigo_productos }
+            where: { cedula_usuarios : req.params.cedula_usuarios }
         })
         res.json({
             "message":"¡Registro eliminado correctamente!"
