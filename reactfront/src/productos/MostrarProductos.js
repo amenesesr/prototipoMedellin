@@ -28,6 +28,7 @@ const CompMostrarProductos = () => {
         <div className='container'>
             <div className='row'>
                 <div className='col'>
+                <Link to="/crearProductos" className='btn btn-primary mt-2 mb-2'><i className="fas fa-plus"></i></Link>
                     <table className="table table-dark table-striped">
                         <thead className="table-dark">
                             <tr>
@@ -64,7 +65,7 @@ const CompMostrarProductos = () => {
                                     <td> { producto.precio_compra_productos } </td>
                                     <td> { producto.precio_venta_productos } </td>
                                     <td>
-                                        {/* <Link to={`/modificar/${producto.codigo_productos}`} className='btn btn-info'><i className="fas fa-edit"></i></Link> */}
+                                        <Link to={`/modificar/${producto.codigo_productos}`} className='btn btn-info'><i className="fas fa-edit"></i></Link> 
                                         <button onClick={ () => eliminarProducto (producto.codigo_productos) } className='btn btn-danger'><i className="fas fa-trash-alt"></i></button>
                                     </td>
                                 </tr>

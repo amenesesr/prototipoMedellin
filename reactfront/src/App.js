@@ -3,6 +3,10 @@ import './App.css';
 
 //importar los componentes
 import CompMostrarProductos from './productos/MostrarProductos'
+import CompCrearProductos from './productos/CrearProductos'
+import CompModificarProductos from './productos/ModificarProductos'
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
@@ -10,7 +14,13 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <CompMostrarProductos></CompMostrarProductos>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element= {<CompMostrarProductos /> } />
+          <Route path='/crearProductos' element={ <CompCrearProductos />} />
+          <Route path='/modificarProducots/:codigo_productos' element={ <CompModificarProductos />} />
+        </Routes>
+      </BrowserRouter> 
     </div>
   );
 }
