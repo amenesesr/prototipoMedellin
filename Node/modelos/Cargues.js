@@ -6,5 +6,6 @@ const CarguesModelo = db.define('db_cargues',{
     rechazados_cargues: { type: DataTypes.INTEGER},
     total_cargues: { type: DataTypes.INTEGER}
 })
+CarguesModelo.removeAttribute('id');
 
 export default CarguesModelo

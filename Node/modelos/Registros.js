@@ -7,5 +7,6 @@ const RegistrosModelo = db.define('db_registros',{
     usuario_registros: { type: DataTypes.STRING },
     accion_registros: { type: DataTypes.STRING }
 })
+RegistrosModelo.removeAttribute('id')
 
 export default RegistrosModelo

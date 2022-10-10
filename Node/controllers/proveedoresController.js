@@ -6,8 +6,8 @@ export const mostrar = async (req, res) =>{
     console.log("============================")
 
     try {
-        const products = await ProveedoresModelo.findAll()
-        res.json(products)
+        const proveedores = await ProveedoresModelo.findAll()
+        res.json(proveedores)
     } catch (error) {
         res.json( {message: error.message} )
     }
@@ -20,10 +20,10 @@ export const mostraru = async (req, res) =>{
     console.log("===========================")
 
     try {
-        const product = await ProveedoresModelo.findAll({
+        const proveedores = await ProveedoresModelo.findAll({
             where:{ nit_proveedores: req.params.nit_proveedores }
         })
-        res.json(product[0])
+        res.json(proveedores[0])
     } catch (error) {
         res.json( {message: error.message} )
     }

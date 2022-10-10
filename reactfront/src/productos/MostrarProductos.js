@@ -2,13 +2,12 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 
-const URI = 'http://localhost:5000/medellin/productos'
+const URI = 'http://localhost:5000/medellin/productos/'
 
 const CompMostrarProductos = () => {
     const [productos, setProductos] = useState([])
     useEffect( () => {
         getProductos()
-        
     },[])
 
     //mostrar todos los productos
@@ -18,17 +17,18 @@ const CompMostrarProductos = () => {
         console.log(productos)
     }
 
-    //eliminar todos los productos
+    //eliminar producto
     const eliminarProducto = async (codigo_productos) => {
-        await axios.delete('${URI}${codigo_productos}')
+        await axios.delete(`${URI}${codigo_productos}`)
         getProductos()
     }
 
     return(
         <div className='container'>
+            <Link to="/crearProductos" className='btn btn-primary mt-2 mb-2'><i className="fas fa-plus"></i></Link>
+            <Link to="/subirProductos/" className='btn btn-info' tooltip= "aaa"><i class="fa-solid fa-file-arrow-up"></i></Link> 
             <div className='row'>
                 <div className='col'>
-                <Link to="/crearProductos" className='btn btn-primary mt-2 mb-2'><i className="fas fa-plus"></i></Link>
                     <table className="table table-dark table-striped">
                         <thead className="table-dark">
                             <tr>
@@ -65,7 +65,7 @@ const CompMostrarProductos = () => {
                                     <td> { producto.precio_compra_productos } </td>
                                     <td> { producto.precio_venta_productos } </td>
                                     <td>
-                                        <Link to={`/modificar/${producto.codigo_productos}`} className='btn btn-info'><i className="fas fa-edit"></i></Link> 
+                                        <Link to={`/modificarProductos/${producto.codigo_productos}`} className='btn btn-info'><i className="fas fa-edit"></i></Link> 
                                         <button onClick={ () => eliminarProducto (producto.codigo_productos) } className='btn btn-danger'><i className="fas fa-trash-alt"></i></button>
                                     </td>
                                 </tr>
@@ -74,7 +74,7 @@ const CompMostrarProductos = () => {
                     </table>
                 </div>
             </div>
-        </div>
+        </div>  
     )
 
 }
